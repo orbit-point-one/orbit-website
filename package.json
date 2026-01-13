@@ -18,11 +18,12 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "@iconify-json/ion": "^1.2.6",
+    "@iconify-json/lucide": "^1.2.84",
     "@nuxt/hints": "1.0.0-alpha.5",
     "@nuxt/image": "2.0.0",
     "@nuxt/test-utils": "3.23.0",
     "@nuxt/ui": "^4.3.0",
+    "@vueuse/motion": "^3.0.3",
     "@vueuse/nuxt": "14.1.0",
     "dayjs-nuxt": "2.1.11",
     "nuxt": "^4.2.2",

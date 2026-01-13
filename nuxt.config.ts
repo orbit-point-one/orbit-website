@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/test-utils',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
     'dayjs-nuxt',
   ],
 
@@ -21,6 +22,10 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
+
+  colorMode: {
+    preference: 'light',
+  },
 
   eslint: {
     config: {
