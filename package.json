@@ -1,0 +1,24 @@
+{
+  "name": "orbit-point-one-masterclass-ceo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@nuxt/ui": "^2.18.7",
+    "nuxt": "^3.14.1592",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@nuxt/icon": "^1.9.3",
+    "@types/node": "^22.14.0",
+    "typescript": "~5.8.2"
+  }
+}

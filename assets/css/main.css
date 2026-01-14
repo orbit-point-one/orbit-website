@@ -1,0 +1,33 @@
+body {
+  background-color: #1E1E1E;
+  color: #F5F5DC;
+  scroll-behavior: smooth;
+}
+
+.glass-morphism {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #E9C46A 0%, #A80606 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Concentric Orbit Background */
+.bg-orbit-pattern {
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, transparent 10%, rgba(233, 196, 106, 0.05) 10.5%, transparent 11%),
+    radial-gradient(circle at center, transparent 0%, transparent 25%, rgba(168, 6, 6, 0.05) 25.5%, transparent 26%),
+    radial-gradient(circle at center, transparent 0%, transparent 45%, rgba(245, 245, 220, 0.03) 45.5%, transparent 46%);
+  background-size: 100% 100%;
+}
+
+.bg-grid {
+  background-image: radial-gradient(rgba(245, 245, 220, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
