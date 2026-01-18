@@ -2,17 +2,48 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: "Public Sans", sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --color-dark: #1e1e1e;
+  --color-cream-white: #fafae6;
+
+  --color-primary: oklch(63.07% 0.21348 25.817);
+  --color-primary-50: oklch(94.565% 0.02409 17.586);
+  --color-primary-100: oklch(90.594% 0.04377 17.989);
+  --color-primary-200: oklch(82.306% 0.0859 19.069);
+  --color-primary-300: oklch(74.7% 0.13179 20.687);
+  --color-primary-400: oklch(68.082% 0.17679 22.995);
+  --color-primary-500: oklch(63.07% 0.21348 25.817);
+  --color-primary-600: oklch(57.79% 0.23042 28.609);
+  --color-primary-700: oklch(47.849% 0.18923 28.44);
+  --color-primary-800: oklch(37.18% 0.14441 28.081);
+  --color-primary-900: oklch(25.718% 0.09528 27.216);
+  --color-primary-950: oklch(19.517% 0.06818 26.273);
+
+  --color-secondary: oklch(79.462% 0.13752 86.142);
+  --color-secondary-50: oklch(96.83% 0.02239 87.15);
+  --color-secondary-100: oklch(94.799% 0.03618 87.794);
+  --color-secondary-200: oklch(90.824% 0.06602 88.053);
+  --color-secondary-300: oklch(86.946% 0.09421 87.897);
+  --color-secondary-400: oklch(83.195% 0.11825 87.057);
+  --color-secondary-500: oklch(79.462% 0.13752 86.142);
+  --color-secondary-600: oklch(72.611% 0.14177 83.254);
+  --color-secondary-700: oklch(59.673% 0.11527 83.418);
+  --color-secondary-800: oklch(46.203% 0.08781 84.985);
+  --color-secondary-900: oklch(31.421% 0.05661 86.249);
+  --color-secondary-950: oklch(23.308% 0.03868 84.792);
+}
+
+/* Concentric Orbit Background */
+.bg-orbit-pattern {
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, transparent 10%, rgba(233, 196, 106, 0.05) 10.5%, transparent 11%),
+    radial-gradient(circle at center, transparent 0%, transparent 25%, rgba(168, 6, 6, 0.05) 25.5%, transparent 26%),
+    radial-gradient(circle at center, transparent 0%, transparent 45%, rgba(245, 245, 220, 0.03) 45.5%, transparent 46%);
+  background-size: 100% 100%;
+}
+
+.bg-grid {
+  background-image: radial-gradient(rgba(245, 245, 220, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
