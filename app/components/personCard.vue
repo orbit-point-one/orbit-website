@@ -1,7 +1,5 @@
 <script setup lang="ts">
-defineProps<{
-  person: Speaker;
-}>();
+const { person } = defineProps<{ person: Speaker }>();
 </script>
 
 <template>
@@ -25,6 +23,16 @@ defineProps<{
           <template v-else>
             {{ person.role }} at {{ person.company }}
           </template>
+        </div>
+        <div class="flex items-center flex-wrap gap-1 mt-2">
+          <UButton
+            v-for="v in person.icons"
+            :icon="v.icon"
+            :to="v.link"
+            color="neutral"
+            variant="ghost"
+            class="text-white hover:bg-white/20"
+          />
         </div>
       </div>
     </div>

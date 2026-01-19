@@ -344,7 +344,7 @@ const rerenderKey = ref(0);
       </div>
     </section>
 
-    <section class="py-40 px-6 bg-orbit-black">
+    <!-- <section class="py-40 px-6 bg-orbit-black">
       <div class="max-w-7xl mx-auto text-center">
         <AnimationTextScroll
           :children="scrollText"
@@ -358,10 +358,10 @@ const rerenderKey = ref(0);
           class="tracking-tight"
         />
       </div>
-    </section>
+    </section> -->
 
     <!-- Testimonial Section -->
-    <section class="py-24 px-6 bg-orbit-black">
+    <!-- <section class="py-24 px-6 bg-orbit-black">
       <div class="max-w-7xl mx-auto text-center">
         <UBadge variant="subtle" label="TESTIMONIAL" class="mb-4" />
         <h3
@@ -379,7 +379,7 @@ const rerenderKey = ref(0);
           <LayoutMasonry :items="TESTIMONIALS" />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Partnership Section -->
     <section class="py-32 px-6 relative bg-orbit-black">

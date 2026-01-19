@@ -80,6 +80,15 @@ const middleMenus = [
         class="text-white hover:bg-white/10"
         variant="ghost"
       />
+      <UButton
+        to="https://www.facebook.com/profile.php?id=61586636492195"
+        target="_blank"
+        icon="i-simple-icons-facebook"
+        aria-label="Instagram"
+        color="neutral"
+        class="text-white hover:bg-white/10"
+        variant="ghost"
+      />
     </template>
   </UFooter>
 </template>
