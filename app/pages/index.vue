@@ -1,41 +1,27 @@
 <script setup lang="ts">
 import { SPEAKERS } from "~/utils/constants";
 
+const TITLE = "From Zero to CEO";
+const DESCRIPTION = "Wujudkan bisnis impianmu dimulai hari ini.";
+const IMAGE = "/images/logo.svg";
+const IMAGE_ALT = "Keynote Speakers";
+
 useHead({
-  title: "From Zero to CEO",
+  title: TITLE,
 });
 
 useSeoMeta({
-  title: "From Zero to CEO",
-  description: "Wujudkan bisnis impianmu dimulai hari ini.",
-  // og
+  title: TITLE,
+  description: DESCRIPTION,
+  ogTitle: TITLE,
+  ogDescription: DESCRIPTION,
+  ogImage: IMAGE,
+  ogImageAlt: IMAGE_ALT,
+  twitterTitle: TITLE,
+  twitterDescription: DESCRIPTION,
+  twitterImage: IMAGE,
+  twitterImageAlt: IMAGE_ALT,
 });
-
-const scrollText = ref(
-  "Tidak ada waktu yang tepat untuk mulai membangun sebuah bisnis. Karenanya, mulailah sekarang dan perbaiki secara bertahap di sepanjang jalan.",
-);
-const enableBlur = ref(true);
-const baseOpacity = ref(0.1);
-const baseRotation = ref(2);
-const blurStrength = ref(4);
-const rotationEnd = ref("bottom bottom");
-const wordAnimationEnd = ref("bottom bottom");
-const rerenderKey = ref(0);
-
-const links = ref([
-  {
-    label: "Get started",
-    to: "/docs/getting-started",
-    icon: "i-lucide-square-play",
-  },
-  {
-    label: "Learn more",
-    to: "/docs/getting-started/theme/design-system",
-    color: "neutral",
-    variant: "subtle",
-    trailingIcon: "i-lucide-arrow-right",
-  },
-]);
 </script>
 
 <template>
@@ -46,7 +32,7 @@ const links = ref([
       headline="Next Level Innovator"
       orientation="horizontal"
       :ui="{
-        root: 'py-20 bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
+        root: 'py-8 2xl:py-20 bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
       }"
     >
       <template #title>
@@ -69,7 +55,7 @@ const links = ref([
       <div class="max-lg:hidden h-full">
         <NuxtImg
           src="/images/speaker/keynote-speaker-full.png"
-          class="absolute w-200 bottom-0"
+          class="absolute w-200 bottom-0 lg:-right-40 xl:right-0"
         />
       </div>
 
@@ -92,7 +78,7 @@ const links = ref([
         <div class="text-left">
           <UBadge variant="subtle" label="KEYNOTE SPEAKER" class="mb-4" />
           <h3
-            class="tracking-tighter text-3xl md:text-5xl font-black flex max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
+            class="tracking-tighter text-3xl md:text-5xl font-black flex lg:flex-wrap max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
           >
             Temui narasumber
             <AnimationGradientText
@@ -104,7 +90,9 @@ const links = ref([
             di bidangnya
           </h3>
         </div>
-        <div class="pt-40 flex max-md:flex-col justify-evenly gap-40 lg:gap-28">
+        <div
+          class="pt-40 flex max-md:flex-col justify-evenly gap-40 md:gap-8 xl:gap-28"
+        >
           <PersonCard v-for="person in SPEAKERS" :person class="md:w-1/3" />
         </div>
       </div>
