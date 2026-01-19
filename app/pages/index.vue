@@ -21,12 +21,41 @@ const blurStrength = ref(4);
 const rotationEnd = ref("bottom bottom");
 const wordAnimationEnd = ref("bottom bottom");
 const rerenderKey = ref(0);
+
+const links = ref([
+  {
+    label: 'Get started',
+    to: '/docs/getting-started',
+    icon: 'i-lucide-square-play'
+  },
+  {
+    label: 'Learn more',
+    to: '/docs/getting-started/theme/design-system',
+    color: 'neutral',
+    variant: 'subtle',
+    trailingIcon: 'i-lucide-arrow-right'
+  }
+])
 </script>
 
 <template>
   <div class="overflow-x-hidden">
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen">
+    <UPageHero
+    title="Ultimate Vue UI library"
+    description="A Nuxt/Vue-integrated UI library providing a rich set of fully-styled, accessible and highly customizable components for building modern web applications."
+    headline="New release"
+    orientation="horizontal"
+    :links="links"
+  >
+    <img
+      src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg"
+      alt="Seminars"
+      class="rounded-lg shadow-2xl ring ring-default"
+    />
+  </UPageHero>
+
+    <!-- <section id="hero" class="relative h-screen">
       <div class="w-full h-screen absolute z-0">
         <AnimationDotGrid
           :dot-size="3"
@@ -97,7 +126,7 @@ const rerenderKey = ref(0);
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Speakers Section -->
     <section id="speaker" class="py-24 px-6 relative overflow-hidden">
