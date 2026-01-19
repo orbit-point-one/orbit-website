@@ -1,10 +1,10 @@
 export interface Speaker {
-  id: string;
+  id: number;
   name: string;
   role: string;
-  bio: string;
-  image: string;
   company: string;
+  image: string;
+  imageClass?: string;
 }
 
 export interface RundownItem {
@@ -24,6 +24,16 @@ export interface Partner {
   logo: string;
 }
 
+export interface Testimonial {
+  name: string;
+  desc: string;
+  avatar: {
+    src: string;
+    alt: string;
+  };
+  quote: string;
+}
+
 export interface EnrollmentData {
   name: string;
   email: string;
@@ -35,36 +45,28 @@ export interface EnrollmentData {
 
 export const SPEAKERS: Speaker[] = [
   {
-    id: "1",
-    name: "Sarah Chen",
-    role: "Direktur Pelaksana",
-    company: "Venture Capital Global",
-    bio: "Mantan CEO Fortune 500 dengan pengalaman 20+ tahun dalam mengembangkan unicorn teknologi di Asia dan Eropa.",
-    image: "https://picsum.photos/400/500?random=1",
+    id: 1,
+    name: "Muhamad Arif Nurjaman S.Pd",
+    role: "CEO",
+    company: "Orbit Point One",
+    image: "/images/speaker/arif.png",
+    imageClass: "w-96",
   },
   {
-    id: "2",
-    name: "Marcus Thorne",
-    role: "Chief Strategy Officer",
-    company: "NexGen AI",
-    bio: "Pelopor dalam transformasi bisnis berbasis AI dan keunggulan operasional untuk perusahaan besar.",
-    image: "https://picsum.photos/400/500?random=2",
+    id: 2,
+    name: "Mystery Guest",
+    role: "",
+    company: "",
+    image: "/images/speaker/unknown-person.png",
+    imageClass: "w-150",
   },
   {
-    id: "3",
-    name: "Elena Rodriguez",
-    role: "Pendiri & CEO",
-    company: "Lumina Health",
-    bio: "Entrepreneur serial yang membangun dan menjual tiga startup health-tech dengan valuasi gabungan $1M+.",
-    image: "https://picsum.photos/400/500?random=3",
-  },
-  {
-    id: "4",
-    name: "Dr. David Wu",
-    role: "Kepala Inovasi",
-    company: "Dosen Tamu Stanford GSB",
-    bio: "Peneliti terkemuka dalam ekonomi perilaku dan psikologi kepemimpinan modern.",
-    image: "https://picsum.photos/400/500?random=4",
+    id: 3,
+    name: "Chairatunnisa, S.Ak",
+    role: "Founder",
+    company: "PT Badiuzzaman",
+    image: "/images/speaker/ica.png",
+    imageClass: "w-96",
   },
 ];
 
@@ -119,6 +121,28 @@ export const BENEFITS: BenefitItem[] = [
     description:
       "Bergabung dengan komunitas global Orbit Point One dengan sesi check-in bulanan.",
     icon: "Globe",
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Muhamad Arif Nurjaman, S.Pd",
+    desc: "CEO at Orbit Point One",
+    quote: "Mengikuti kelas ini akan membuatmu lebih gg",
+    avatar: {
+      alt: "",
+      src: "/images/speaker/arif-avatar.png",
+    },
+  },
+  {
+    name: "Chairatunnisa, S.Ak",
+    desc: "Founder at PT Badiuzzaman",
+    quote:
+      "Seminar ini benar-benar bermanfaat karena banyak sekali hal yang sudah diberikan dan dihasilkan!",
+    avatar: {
+      alt: "",
+      src: "/images/speaker/ica-avatar.png",
+    },
   },
 ];
 

@@ -3,11 +3,10 @@
 
 @theme static {
   --font-sans: "Public Sans", sans-serif;
-
   --color-dark: #1e1e1e;
   --color-cream-white: #fafae6;
 
-  --color-primary: oklch(63.07% 0.21348 25.817);
+  --color-primary: #ef3e3e;
   --color-primary-50: oklch(94.565% 0.02409 17.586);
   --color-primary-100: oklch(90.594% 0.04377 17.989);
   --color-primary-200: oklch(82.306% 0.0859 19.069);

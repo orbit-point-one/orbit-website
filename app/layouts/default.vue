@@ -4,4 +4,6 @@
   <UMain>
     <slot />
   </UMain>
+
+  <LayoutFooter />
 </template>
