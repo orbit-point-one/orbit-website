@@ -5,5 +5,6 @@
     <slot />
   </UMain>
 
+  <WhatsappButton />
   <LayoutFooter />
 </template>

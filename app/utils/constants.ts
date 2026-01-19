@@ -4,6 +4,10 @@ export interface Speaker {
   role: string;
   company: string;
   image: string;
+  icons: {
+    icon: string;
+    link: string;
+  }[];
   imageClass?: string;
 }
 
@@ -49,22 +53,44 @@ export const SPEAKERS: Speaker[] = [
     name: "Muhamad Arif Nurjaman S.Pd",
     role: "CEO",
     company: "Orbit Point One",
+    icons: [
+      {
+        icon: "i-simple-icons-instagram",
+        link: "https://www.instagram.com/mrip_n/",
+      },
+    ],
     image: "/images/speaker/arif.png",
     imageClass: "w-96",
   },
   {
     id: 2,
-    name: "Mystery Guest",
-    role: "",
-    company: "",
-    image: "/images/speaker/unknown-person.png",
-    imageClass: "w-150",
+    name: "Adi Ahmadi Jauhari, S.T., M.Si",
+    role: "Founder",
+    company: "PT Arra Busana Muslim",
+    icons: [
+      {
+        icon: "i-simple-icons-instagram",
+        link: "https://www.instagram.com/adiahmadijauhari/",
+      },
+      {
+        icon: "i-lucide-globe",
+        link: "https://arrafashionmuslim.com",
+      },
+    ],
+    image: "/images/speaker/adi.png",
+    imageClass: "w-200",
   },
   {
     id: 3,
     name: "Chairatunnisa, S.Ak",
     role: "Founder",
-    company: "PT Badiuzzaman",
+    company: "PT Badiuzzaman Cipta Amani",
+    icons: [
+      {
+        icon: "i-simple-icons-instagram",
+        link: "https://www.instagram.com/chairatunicha/",
+      },
+    ],
     image: "/images/speaker/ica.png",
     imageClass: "w-96",
   },
