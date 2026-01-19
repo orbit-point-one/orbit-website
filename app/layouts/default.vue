@@ -1,7 +1,10 @@
 <template>
-  <!-- <LayoutHeader /> -->
+  <LayoutHeader />
 
   <UMain>
     <slot />
   </UMain>
+
+  <WhatsappButton />
+  <LayoutFooter />
 </template>
