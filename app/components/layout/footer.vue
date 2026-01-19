@@ -2,11 +2,11 @@
 const middleMenus = [
   {
     label: "Beranda",
-    link: "/",
+    to: "/",
   },
   {
     label: "Tentang kami",
-    link: "/about",
+    to: "/about",
   },
 ];
 </script>
@@ -35,7 +35,10 @@ const middleMenus = [
         orientation="vertical"
         :items="middleMenus"
         variant="link"
-        class="-translate-x-2"
+        :ui="{
+          root: '-translate-x-2',
+          link: 'text-white/80 hover:text-white/50',
+        }"
       />
     </div>
 
@@ -44,16 +47,19 @@ const middleMenus = [
         <h3 class="font-bold text-xl">Hubungi Kami</h3>
         <ul class="space-y-2 mt-5">
           <li class="flex max-lg:justify-center items-center gap-3">
-            <UIcon name="i-lucide-mail" class="size-5" />
+            <UIcon name="i-lucide-mail" class="size-5 max-lg:hidden" />
             orbitpointone@gmail.com
           </li>
           <li class="flex max-lg:justify-center items-center gap-3">
-            <UIcon name="i-simple-icons-whatsapp" class="size-5" /> +62
-            898-4967-609
+            <UIcon
+              name="i-simple-icons-whatsapp"
+              class="size-5 max-lg:hidden"
+            />
+            +62 898-4967-609
           </li>
-          <li class="mt-3 flex gap-3">
+          <li class="mt-3 flex max-lg:justify-center gap-3">
             <div>
-              <UIcon name="i-lucide-map-pin" class="size-5" />
+              <UIcon name="i-lucide-map-pin" class="size-5 max-lg:hidden" />
             </div>
             <div>
               Ruko Bumi Asri Jl. Cikiray Kidul No.A6, Sukamanah, Kec. Cisaat,

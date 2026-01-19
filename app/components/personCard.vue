@@ -14,7 +14,7 @@ const { person } = defineProps<{ person: Speaker }>();
       />
     </div>
     <div
-      class="group-hover:opacity-100 opacity-0 transition-opacity duration-150 absolute top-0 w-full h-96 z-30 bg-linear-to-t from-[#1C1C1C] to-transparent"
+      class="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity duration-150 absolute top-0 w-full h-96 z-30 bg-linear-to-t from-[#1C1C1C] to-transparent"
     >
       <div class="absolute bottom-0 px-8 pb-10 flex flex-col gap-1">
         <div class="font-bold text-xl text-white">{{ person.name }}</div>
@@ -31,7 +31,7 @@ const { person } = defineProps<{ person: Speaker }>();
             :to="v.link"
             color="neutral"
             variant="ghost"
-            class="text-white hover:bg-white/20"
+            class="text-white hover:bg-white/20 active:bg-white/20"
           />
         </div>
       </div>

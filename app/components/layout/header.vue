@@ -15,13 +15,25 @@ const items: NavigationMenuItem[] = [
 
 <template>
   <UHeader>
-    <template #left>Orbit Point One</template>
+    <template #left>
+      <div class="flex items-center h-full w-full gap-3">
+        <NuxtImg src="/images/logo-red.svg" class="w-14" />
+        <div class="translate-y-1">
+          <UIcon name="i-lucide-x" />
+        </div>
+        <NuxtImg src="/images/logo-badiuzzaman.png" class="w-40 translate-y-1.5" />
+      </div>
+    </template>
 
     <template #right>
-      <div class="flex items-center gap-3">
+      <div class="max-lg:hidden flex items-center gap-3">
         <UNavigationMenu :items :ui="{ list: 'gap-3' }" />
-        <UButton label="Daftar Seminar" />
+        <HomeRegisterForm button-type="header" />
       </div>
+    </template>
+
+    <template #body>
+      <UNavigationMenu :items orientation="vertical" />
     </template>
   </UHeader>
 </template>

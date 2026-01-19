@@ -24,109 +24,67 @@ const rerenderKey = ref(0);
 
 const links = ref([
   {
-    label: 'Get started',
-    to: '/docs/getting-started',
-    icon: 'i-lucide-square-play'
+    label: "Get started",
+    to: "/docs/getting-started",
+    icon: "i-lucide-square-play",
   },
   {
-    label: 'Learn more',
-    to: '/docs/getting-started/theme/design-system',
-    color: 'neutral',
-    variant: 'subtle',
-    trailingIcon: 'i-lucide-arrow-right'
-  }
-])
+    label: "Learn more",
+    to: "/docs/getting-started/theme/design-system",
+    color: "neutral",
+    variant: "subtle",
+    trailingIcon: "i-lucide-arrow-right",
+  },
+]);
 </script>
 
 <template>
   <div class="overflow-x-hidden">
     <!-- Hero Section -->
     <UPageHero
-    title="Ultimate Vue UI library"
-    description="A Nuxt/Vue-integrated UI library providing a rich set of fully-styled, accessible and highly customizable components for building modern web applications."
-    headline="New release"
-    orientation="horizontal"
-    :links="links"
-  >
-    <img
-      src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg"
-      alt="Seminars"
-      class="rounded-lg shadow-2xl ring ring-default"
-    />
-  </UPageHero>
+      description="Wujudkan bisnis impianmu dimulai hari ini."
+      headline="Next Level Innovator"
+      orientation="horizontal"
+      :ui="{
+        root: 'py-20 bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
+      }"
+    >
+      <template #title>
+        <h1
+          class="tracking-tighter text-5xl md:text-8xl font-black mb-8 leading-none"
+        >
+          <div>FROM ZERO</div>
+          <div class="flex gap-3">
+            TO
+            <AnimationGradientText
+              text="CEO"
+              :colors="['#A80606', '#E9C46A']"
+              :animation-speed="10"
+              :show-border="false"
+            />
+          </div>
+        </h1>
+      </template>
 
-    <!-- <section id="hero" class="relative h-screen">
-      <div class="w-full h-screen absolute z-0">
-        <AnimationDotGrid
-          :dot-size="3"
-          :gap="20"
-          base-color="#d8d8d8"
-          active-color="#A80606"
-          :proximity="250"
-          :speed-trigger="100"
-          :shock-radius="250"
-          :shock-strength="5"
-          :max-speed="5000"
-          :resistance="750"
-          :return-duration="1.5"
-          class="bg-linear-to-t from-white to-transparent"
+      <div class="max-lg:hidden h-full">
+        <NuxtImg
+          src="/images/speaker/keynote-speaker-full.png"
+          class="absolute w-200 bottom-0"
         />
       </div>
-      <div class="z-10 h-screen">
-        <div class="h-screen flex items-center justify-center text-center">
-          <div
-            class="absolute inset-0 bg-linear-to-b from-transparent via-orbit-black/80 to-orbit-black pointer-events-none"
-          ></div>
-          <div class="relative z-10 max-w-4xl">
-            <h1
-              class="tracking-tighter text-5xl md:text-8xl font-black text-orbit-beige mb-8 leading-none"
-            >
-              <div>FROM ZERO</div>
-              <div class="flex justify-center gap-3">
-                TO
-                <AnimationGradientText
-                  text="CEO"
-                  :colors="['#A80606', '#E9C46A']"
-                  :animation-speed="10"
-                  :show-border="false"
-                />
-              </div>
-            </h1>
-            <p
-              class="text-xl md:text-2xl text-orbit-beige/70 mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              Wujudkan bisnis impianmu dimulai hari ini.
-            </p>
-            <div class="relative mb-8">
-              <UBadge
-                label="Diskon early bird bagi 10 peserta pertama"
-                variant="subtle"
-                size="xl"
-                class="animate-pulse"
-              />
-            </div>
-            <div
-              class="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            >
-              <HomeRegisterForm />
-              <UButton
-                variant="ghost"
-                color="neutral"
-                size="xl"
-                class="px-5 py-4"
-                label="Pelajari lebih lanjut"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="absolute bottom-10 lg:bottom-24 left-0 right-0">
-          <div class="flex flex-col gap-2 justify-center items-center">
-            <div class="text-sm text-dark/60">Dipersembahkan oleh</div>
-            <NuxtImg src="/images/logo-red.svg" class="w-24" />
-          </div>
-        </div>
-      </div>
-    </section> -->
+
+      <template #links>
+        <HomeRegisterForm />
+        <UButton
+          variant="ghost"
+          color="neutral"
+          size="xl"
+          class="px-5 py-4"
+          label="Pelajari lebih lanjut"
+          to="#speaker"
+        />
+      </template>
+    </UPageHero>
 
     <!-- Speakers Section -->
     <section id="speaker" class="py-24 px-6 relative overflow-hidden">
@@ -134,7 +92,7 @@ const links = ref([
         <div class="text-left">
           <UBadge variant="subtle" label="KEYNOTE SPEAKER" class="mb-4" />
           <h3
-            class="tracking-tighter text-3xl md:text-5xl font-black text-orbit-beige flex items-center justify-start gap-3"
+            class="tracking-tighter text-3xl md:text-5xl font-black flex max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
           >
             Temui narasumber
             <AnimationGradientText
@@ -146,7 +104,7 @@ const links = ref([
             di bidangnya
           </h3>
         </div>
-        <div class="pt-40 flex max-md:flex-col justify-evenly gap-28">
+        <div class="pt-40 flex max-md:flex-col justify-evenly gap-40 lg:gap-28">
           <PersonCard v-for="person in SPEAKERS" :person class="md:w-1/3" />
         </div>
       </div>
@@ -160,18 +118,18 @@ const links = ref([
       <img
         src="/images/texture.svg"
         alt=""
-        class="absolute w-[80rem] top-0 right-0 translate-x-[50%] -translate-y-[50%] z-0"
+        class="absolute w-7xl top-0 right-0 translate-x-[50%] -translate-y-[50%] z-0"
       />
       <img
         src="/images/texture.svg"
         alt=""
-        class="absolute w-[80rem] bottom-0 left-0 -translate-x-[50%] translate-y-[50%] z-0"
+        class="absolute w-7xl bottom-0 left-0 -translate-x-[50%] translate-y-[50%] z-0"
       />
       <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-left">
           <UBadge variant="subtle" label="BENEFIT" class="mb-4" />
           <h3
-            class="tracking-tighter text-3xl md:text-5xl font-black text-orbit-beige flex items-center justify-start gap-3"
+            class="tracking-tighter text-3xl md:text-5xl font-black flex max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
           >
             Pengalaman yang menggugah
             <AnimationGradientText
@@ -182,7 +140,7 @@ const links = ref([
             />
           </h3>
         </div>
-        <div class="pt-20 grid grid-cols-2 gap-x-10 gap-y-14">
+        <div class="pt-20 grid lg:grid-cols-2 gap-x-10 gap-y-14">
           <!-- Benefit 1 -->
           <div class="flex gap-4">
             <div class="shrink-0">
@@ -415,9 +373,11 @@ const links = ref([
       <div class="w-full mx-auto text-center relative z-10">
         <UBadge variant="subtle" label="PARTNERSHIP" class="mb-4" />
         <h3
-          class="tracking-tighter text-3xl md:text-5xl font-black text-orbit-beige flex flex-col items-center justify-center gap-3"
+          class="tracking-tighter text-3xl md:text-5xl font-black flex flex-col items-center justify-center gap-1 lg:gap-3"
         >
-          <div class="flex items-center gap-3">
+          <div
+            class="flex max-lg:justify-center items-center max-lg:gap-x-3 lg:gap-3 flex-wrap"
+          >
             Kami
             <AnimationGradientText
               text="bekerja sama"
@@ -482,9 +442,7 @@ const links = ref([
           Mulailah bangun bisnismu dengan dengan skill dan ide produk yang
           tervalidasi oleh para ahli.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <HomeRegisterForm />
-        </div>
+        <HomeRegisterForm />
       </div>
       <!-- Orbital circles at the bottom -->
       <div

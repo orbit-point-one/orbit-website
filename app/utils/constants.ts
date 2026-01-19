@@ -179,3 +179,26 @@ export const PARTNERS: Partner[] = [
   { name: "AWS", logo: "https://logo.clearbit.com/aws.amazon.com" },
   { name: "Forbes", logo: "https://logo.clearbit.com/forbes.com" },
 ];
+
+export const DOMICILES = [
+  { label: "Sukabumi", value: 0 },
+  { label: "Jakarta", value: 1 },
+  { label: "Bogor", value: 2 },
+  { label: "Depok", value: 3 },
+  { label: "Tanggerang", value: 4 },
+  { label: "Bekasi", value: 5 },
+  { label: "Lainnya", value: -1 },
+];
+
+export const SOURCES = [
+  { label: "Instagram", value: 0 },
+  { label: "Whatsapp", value: 1 },
+  { label: "Facebook", value: 2 },
+  { label: "Seminar", value: 3 },
+  { label: "Keluarga, teman, atau kenalan", value: 4 },
+];
+
+export const HAVE_ATTENDED_SEMINAR = [
+  { label: "Tidak", value: false },
+  { label: "Ya", value: true },
+];
