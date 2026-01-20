@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const IMAGE = "/images/logo.svg";
+const IMAGE_ALT = "Logo Orbit";
+
 export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
@@ -16,6 +20,30 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/main.css"],
+
+  app: {
+    head: {
+      titleTemplate: "%s - Orbit Point One",
+      meta: [
+        {
+          name: "twitter:image",
+          content: IMAGE,
+        },
+        {
+          name: "twitter:image:alt",
+          content: IMAGE_ALT,
+        },
+        {
+          name: "og:image",
+          content: IMAGE,
+        },
+        {
+          name: "og:image:alt",
+          content: IMAGE_ALT,
+        },
+      ],
+    },
+  },
 
   routeRules: {
     "/": { prerender: true },

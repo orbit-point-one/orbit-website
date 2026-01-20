@@ -3,8 +3,6 @@ import { SPEAKERS } from "~/utils/constants";
 
 const TITLE = "From Zero to CEO";
 const DESCRIPTION = "Wujudkan bisnis impianmu dimulai hari ini.";
-const IMAGE = "/images/logo.svg";
-const IMAGE_ALT = "Keynote Speakers";
 
 useHead({
   title: TITLE,
@@ -15,12 +13,8 @@ useSeoMeta({
   description: DESCRIPTION,
   ogTitle: TITLE,
   ogDescription: DESCRIPTION,
-  ogImage: IMAGE,
-  ogImageAlt: IMAGE_ALT,
   twitterTitle: TITLE,
   twitterDescription: DESCRIPTION,
-  twitterImage: IMAGE,
-  twitterImageAlt: IMAGE_ALT,
 });
 </script>
 
