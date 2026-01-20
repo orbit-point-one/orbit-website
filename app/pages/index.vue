@@ -168,19 +168,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <svg
-                  class="h-6 w-6 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  />
-                </svg>
+                <UIcon name="i-lucide-brain" class="size-6 text-primary" />
               </div>
             </div>
             <div>
@@ -201,19 +189,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <svg
-                  class="h-6 w-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17.25c0 5.105 3.07 9.408 7.5 11.85m0-23c5.5 0 10 4.745 10 10.997v13m0-13c4.43-2.442 7.5-6.745 7.5-11.85 0-6.252-4.49-11-10-11z"
-                  />
-                </svg>
+                <UIcon name="i-lucide-user-check" class="size-6 text-primary" />
               </div>
             </div>
             <div>
@@ -234,19 +210,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <svg
-                  class="h-6 w-6 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3.414a2 2 0 01-2-2V6.414a2 2 0 012-2h15.172a2 2 0 012 2v11.172a2 2 0 01-2 2Z"
-                  />
-                </svg>
+                <UIcon name="i-lucide-presentation" class="size-6 text-primary" />
               </div>
             </div>
             <div>
@@ -267,19 +231,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <svg
-                  class="h-6 w-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+                <UIcon name="i-lucide-network" class="size-6 text-primary" />
               </div>
             </div>
             <div>
@@ -300,19 +252,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <svg
-                  class="h-6 w-6 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
+                <UIcon name="i-lucide-crown" class="size-6 text-primary" />
               </div>
             </div>
             <div>
@@ -333,19 +273,7 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <svg
-                  class="h-6 w-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
+                <UIcon name="i-lucide-refresh-cw" class="size-6 text-primary" />
               </div>
             </div>
             <div>

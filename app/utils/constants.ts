@@ -173,7 +173,7 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const PARTNERS: Partner[] = [
-  { name: "Goldman Sachs", logo: "https://logo.clearbit.com/goldmansachs.com" },
+  { name: "PT Badiuzzaman", logo: "/images/logo-badiuzzaman.png" },
   { name: "TechCrunch", logo: "https://logo.clearbit.com/techcrunch.com" },
   { name: "Stripe", logo: "https://logo.clearbit.com/stripe.com" },
   { name: "AWS", logo: "https://logo.clearbit.com/aws.amazon.com" },
