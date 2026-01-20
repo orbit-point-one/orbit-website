@@ -195,10 +195,51 @@ export const SOURCES = [
   { label: "Whatsapp", value: 1 },
   { label: "Facebook", value: 2 },
   { label: "Seminar", value: 3 },
-  { label: "Keluarga, teman, atau kenalan", value: 4 },
+  { label: "Ads", value: 4 },
+  { label: "Keluarga, teman, atau kenalan", value: 5 },
 ];
 
 export const HAVE_ATTENDED_SEMINAR = [
   { label: "Tidak", value: false },
   { label: "Ya", value: true },
+];
+
+export const BUSINESS_OWNER = [
+  { label: "Tidak", value: false },
+  { label: "Ya", value: true },
+];
+
+export const FIELD = [
+  { label: "Kuliner & F&B", value: 0 },
+  { label: "Fashion & Lifestyle", value: 1 },
+  { label: "Digital / Startup / Tech", value: 2 },
+  { label: "Jasa (Event, Agency, Creative, dll)", value: 3 },
+  { label: "UMKM / Produk Lokal", value: 4 },
+  { label: "Edukasi", value: 5 },
+  { label: "Agribisnis", value: 6 },
+  { label: "Lainnya", value: -1 },
+];
+
+export const TURNOVER = [
+  { label: "Belum ada omset", value: 0 },
+  { label: "< Rp 1 juta", value: 1 },
+  { label: "Rp 1-5 juta", value: 2 },
+  { label: "Rp 5-10 juta", value: 3 },
+  { label: "> Rp 10 juta ", value: 4 },
+];
+
+export const PURPOSE = [
+  { label: "Mencari arah dan mindset CEO", value: 0 },
+  { label: "Validasi ide bisnis", value: 1 },
+  { label: "Membuat bisnis yang sustain", value: 2 },
+  { label: "Naik level dari UMKM ke bisnis serius", value: 3 },
+  { label: "Siap pitching ke investor", value: 4 },
+  { label: "Membangun standar baru dalam bisnis", value: 5 },
+];
+
+export const COMMITMENT = [
+  { label: "Siap belajar dan dibimbing", value: 0 },
+  { label: "Siap ikut kelas lanjutan", value: 1 },
+  { label: "Siap praktik dan dievaluasi", value: 2 },
+  { label: "Masih eksplorasi", value: 3 },
 ];

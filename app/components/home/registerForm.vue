@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { postRegisterSeminar } from "~/services/formService";
-import { DOMICILES, HAVE_ATTENDED_SEMINAR, SOURCES } from "~/utils/constants";
+import { BUSINESS_OWNER, DOMICILES, HAVE_ATTENDED_SEMINAR, SOURCES, TURNOVER, PURPOSE } from "~/utils/constants";
 
 const { buttonType = "hero" } = defineProps<{
   buttonType?: "hero" | "header";
@@ -69,6 +69,10 @@ const onSubmit = async () => {
           <UInput v-model="state.phone" class="w-full" />
         </UFormField>
 
+        <UFormField name="age" label="Tanggal lahir">
+          <UInput placeholder="tgl/bln/thn" v-model="state.age" class="w-full" />
+        </UFormField>
+
         <UFormField name="domicile" label="Domisili kamu">
           <USelect v-model="state.domicile" :items="DOMICILES" class="w-full" />
         </UFormField>
@@ -107,6 +111,59 @@ const onSubmit = async () => {
           <USelect
             v-model="state.have_attended"
             :items="HAVE_ATTENDED_SEMINAR"
+            class="w-full"
+          />
+        </UFormField>
+
+        <UFormField
+          name="business_owner"
+          label="Apakah kamu memiliki usaha?"
+        >
+          <USelect
+            v-model="state.business_owner"
+            :items="BUSINESS_OWNER"
+            class="w-full"
+          />
+        </UFormField>
+
+        <UFormField name="field" label="Bidang usaha">
+          <USelect v-model="state.field" :items="FIELD" class="w-full" />
+        </UFormField>
+
+        <UFormField
+          v-if="state.field === -1"
+          name="field_other"
+          label="Tulis bidang kamu"
+        >
+          <UInput
+            v-model="state.domicile_other"
+            placeholder="Contoh: Pertambangan"
+            class="w-full"
+          />
+        </UFormField>
+
+        <UFormField field="long" label="Sudah berapa lama?">
+          <UInput v-model="state.long" class="w-full" />
+        </UFormField>
+
+        <UFormField
+          name="turnover"
+          label="Berapa omset usaha kamu?"
+        >
+          <USelect
+            v-model="state.turnover"
+            :items="TURNOVER"
+            class="w-full"
+          />
+        </UFormField>
+
+        <UFormField
+          name="purpose"
+          label="Apa tujuan kamu mengikuti program ORBIT.1?"
+        >
+          <USelect
+            v-model="state.purpose"
+            :items="PURPOSE"
             class="w-full"
           />
         </UFormField>
