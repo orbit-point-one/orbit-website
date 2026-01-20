@@ -21,12 +21,16 @@ const items: NavigationMenuItem[] = [
         <div class="translate-y-1">
           <UIcon name="i-lucide-x" />
         </div>
-        <NuxtImg src="/images/logo-badiuzzaman.png" class="w-40 translate-y-1.5" />
+        <NuxtImg
+          src="/images/logo-badiuzzaman.png"
+          class="w-40 translate-y-1.5"
+        />
       </div>
     </template>
 
     <template #right>
       <div class="max-lg:hidden flex items-center gap-3">
+        <UColorModeButton />
         <UNavigationMenu :items :ui="{ list: 'gap-3' }" />
         <HomeRegisterForm button-type="header" />
       </div>
