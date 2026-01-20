@@ -33,6 +33,7 @@ useSeoMeta({
       orientation="horizontal"
       :ui="{
         root: 'py-8 2xl:py-20 bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
+        description: 'dark:text-neutral-100',
       }"
     >
       <template #title>
@@ -101,15 +102,17 @@ useSeoMeta({
     <!-- benefit Section -->
     <section
       id="benefit"
-      class="py-24 px-6 bg-neutral-50 relative overflow-hidden"
+      class="py-24 px-6 bg-neutral-50 dark:bg-neutral-800 relative overflow-hidden"
     >
-      <img
-        src="/images/texture.svg"
+      <UColorModeImage
+        light="/images/texture/target-light.svg"
+        dark="/images/texture/target-dark.svg"
         alt=""
         class="absolute w-7xl top-0 right-0 translate-x-[50%] -translate-y-[50%] z-0"
       />
-      <img
-        src="/images/texture.svg"
+      <UColorModeImage
+        light="/images/texture/target-light.svg"
+        dark="/images/texture/target-dark.svg"
         alt=""
         class="absolute w-7xl bottom-0 left-0 -translate-x-[50%] translate-y-[50%] z-0"
       />
@@ -151,10 +154,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Dibentuk mindset CEO sejak dini
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Peserta dilatih berpikir strategis, mengambil keputusan, dan
                 melihat peluang layaknya seorang CEO sejak usia muda.
               </p>
@@ -182,10 +187,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Dibimbing langsung oleh mentor & praktisi
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Pembelajaran dipandu oleh mentor berpengalaman dan praktisi
                 industri yang aktif, bukan sekadar teori.
               </p>
@@ -213,10 +220,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Mendapat pengalaman pitching ke investor
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Kesempatan nyata untuk melatih presentasi bisnis, validasi ide,
                 dan membangun kepercayaan diri di hadapan investor.
               </p>
@@ -244,10 +253,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Masuk ekosistem founder & leader muda
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Terhubung dengan komunitas founder dan pemimpin muda untuk
                 kolaborasi, jejaring, dan peluang jangka panjang.
               </p>
@@ -275,10 +286,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Mengembangkan leadership & karakter
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Program dirancang untuk membentuk kepemimpinan, integritas,
                 disiplin, dan mental tangguh.
               </p>
@@ -306,10 +319,12 @@ useSeoMeta({
               </div>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 dark:text mb-2"
+              >
                 Tidak hanya belajar, tapi bertransformasi
               </h3>
-              <p class="text-gray-600">
+              <p class="text-neutral-600 dark:text-neutral-300">
                 Fokus pada perubahan pola pikir, sikap, dan kapasitas diri agar
                 siap menghadapi tantangan nyata.
               </p>
