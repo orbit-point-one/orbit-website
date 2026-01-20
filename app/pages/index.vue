@@ -26,8 +26,9 @@ useSeoMeta({
       headline="Next Level Innovator"
       orientation="horizontal"
       :ui="{
-        root: 'py-8 2xl:py-20 bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
-        description: 'dark:text-neutral-100',
+        root: 'py-8 2x10l:py- bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
+        headline: 'text-4xl',
+        description: 'text-neutral-700 dark:text-neutral-100',
       }"
     >
       <template #title>
@@ -54,16 +55,51 @@ useSeoMeta({
         />
       </div>
 
-      <template #links>
-        <HomeRegisterForm />
-        <UButton
-          variant="ghost"
-          color="neutral"
-          size="xl"
-          class="px-5 py-4"
-          label="Pelajari lebih lanjut"
-          to="#speaker"
-        />
+      <template #footer>
+        <div class="space-y-8">
+          <div class="flex gap-3">
+            <HomeRegisterForm />
+            <UButton
+              color="secondary"
+              size="xl"
+              class="px-5 py-4"
+              label="Pelajari lebih lanjut"
+              to="#speaker"
+            />
+          </div>
+
+          <USeparator :ui="{ border: 'border-neutral-400' }" />
+
+          <div class="text-[15px] text-neutral-950 dark:text-neutral-100">
+            <div>Dapatkan kesempatan untuk:</div>
+            <div class="flex max-lg:flex-col gap-3 mt-3">
+              <div class="basis-1/3 flex items-center gap-2">
+                <div
+                  class="flex items-center justify-center size-5 rounded-full bg-success"
+                >
+                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                </div>
+                Mentoring oleh ahli
+              </div>
+              <div class="basis-1/3 flex items-center gap-2">
+                <div
+                  class="flex items-center justify-center size-5 rounded-full bg-success"
+                >
+                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                </div>
+                Kesempatan pitching
+              </div>
+              <div class="basis-1/3 flex flex-nowrap items-center gap-2">
+                <div
+                  class="flex items-center justify-center size-5 rounded-full bg-success"
+                >
+                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                </div>
+                Dapat sertifikat
+              </div>
+            </div>
+          </div>
+        </div>
       </template>
     </UPageHero>
 
