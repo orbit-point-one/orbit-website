@@ -15,21 +15,21 @@ const isOpen = ref(false);
 const isSuccessModalOpen = ref(false);
 
 const onSubmit = async () => {
-  await execute();
+  // await execute();
 
-  if (error.value) {
-    return toast.add({
-      title: "Data gagal dikirim",
-      color: "error",
-      description: error.value.message,
-    });
-  }
+  // if (error.value) {
+  //   return toast.add({
+  //     title: "Data gagal dikirim",
+  //     color: "error",
+  //     description: error.value.message,
+  //   });
+  // }
 
   isOpen.value = false;
   isSuccessModalOpen.value = true;
   setTimeout(() => {
     window.location.href =
-      "https://wa.me/+628984967609?text=Halo admin!%0A%0ASaya sudah daftar kelas *From Zero to CEO*. Apa yang harus saya lakukan selanjutnya?";
+      `https://wa.me/+628984967609?text=Halo admin!%0A%0ASaya ${state.value.name} sudah daftar kelas *From Zero to CEO*. Apa yang harus saya lakukan selanjutnya?`;
   }, 3000);
 };
 </script>
