@@ -23,9 +23,6 @@ const { person } = defineProps<{ person: Speaker }>();
           <template v-else>
             {{ person.role }} at {{ person.company }}
           </template>
-          <div>
-            {{ person.quote }}
-          </div>
         </div>
         <div class="flex items-center flex-wrap gap-1 mt-2">
           <UButton
