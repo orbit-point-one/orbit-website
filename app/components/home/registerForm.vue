@@ -15,15 +15,15 @@ const isOpen = ref(false);
 const isSuccessModalOpen = ref(false);
 
 const onSubmit = async () => {
-  // await execute();
+  await execute();
 
-  // if (error.value) {
-  //   return toast.add({
-  //     title: "Data gagal dikirim",
-  //     color: "error",
-  //     description: error.value.message,
-  //   });
-  // }
+  if (error.value) {
+    return toast.add({
+      title: "Data gagal dikirim",
+      color: "error",
+      description: error.value.message,
+    });
+  }
 
   isOpen.value = false;
   isSuccessModalOpen.value = true;
