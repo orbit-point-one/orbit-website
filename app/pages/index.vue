@@ -353,31 +353,45 @@ useSeoMeta({
         <div class="pt-40">
           <UMarquee pause-on-hover>
             <UTooltip text="Amanee Farm" :delay-duration="0">
-              <NuxtImg src="/images/sponsorship/amanee-farm.png" class="w-24" />
+              <NuxtLink to="https://www.instagram.com/amaneefarm">
+                <NuxtImg src="/images/sponsorship/amanee-farm.png" alt="Amanee Farm" class="w-24" />
+              </NuxtLink>
             </UTooltip>
+
             <UTooltip text="Amani Laundry" :delay-duration="0">
-              <NuxtImg
-                src="/images/sponsorship/amani-laundry.png"
-                class="w-24"
-              />
+              <NuxtLink to="https://www.instagram.com/amanilaundry/">
+                <NuxtImg src="/images/sponsorship/amani-laundry.png" alt="Amani Laundry" class="w-24"/>
+              </NuxtLink>
             </UTooltip>
+
             <UTooltip text="Amani Store" :delay-duration="0">
-              <NuxtImg src="/images/sponsorship/amani-store.png" class="w-24" />
+              <NuxtLink to="https://www.instagram.com/amani_store2025/">
+                <NuxtImg src="/images/sponsorship/amani-store.png" alt="Amani Store" class="w-24" />
+              </NuxtLink> 
             </UTooltip>
+
             <UTooltip text="Innerheal" :delay-duration="0">
-              <NuxtImg src="/images/sponsorship/innerheal.png" class="w-24" />
+              <NuxtLink to="https://www.instagram.com/innerheal.therapy/">
+                <NuxtImg src="/images/sponsorship/innerheal.png" alt="Innerheal" class="w-24" />
+              </NuxtLink>
             </UTooltip>
+
             <UTooltip text="Putra Amani Teknik" :delay-duration="0">
-              <NuxtImg src="/images/sponsorship/pat.png" class="w-24" />
+              <NuxtLink to="https://www.instagram.com/sumurborsukabumi/">
+                <NuxtImg src="/images/sponsorship/pat.png" alt="Putra Amani Teknik" class="w-24" />
+              </NuxtLink>
             </UTooltip>
+
             <UTooltip text="Snap Z" :delay-duration="0">
-              <NuxtImg src="/images/sponsorship/snap-z.png" class="w-24" />
+              <NuxtLink to="https://www.instagram.com/snapz.jpg/">
+                <NuxtImg src="/images/sponsorship/snap-z.png" alt="Snap Z" class="w-24" />
+              </NuxtLink>
             </UTooltip>
+
             <UTooltip text="Yayasan Khairul Ummat" :delay-duration="0">
-              <NuxtImg
-                src="/images/sponsorship/yayasan-khairul-ummat.png"
-                class="w-24"
-              />
+              <NuxtLink to="#">
+                <NuxtImg src="/images/sponsorship/yayasan-khairul-ummat.png" alt="Yayasan Khairul Ummat" class="w-24"/>
+              </NuxtLink>
             </UTooltip>
           </UMarquee>
         </div>

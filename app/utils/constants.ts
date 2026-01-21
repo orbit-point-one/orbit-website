@@ -3,6 +3,7 @@ export interface Speaker {
   name: string;
   role: string;
   company: string;
+  quote: string;
   image: string;
   icons: {
     icon: string;
@@ -53,6 +54,7 @@ export const SPEAKERS: Speaker[] = [
     name: "Muhamad Arif Nurjaman S.Pd",
     role: "CEO",
     company: "Orbit Point One",
+    quote: "lorem ipsum",
     icons: [
       {
         icon: "i-simple-icons-instagram",
@@ -67,6 +69,7 @@ export const SPEAKERS: Speaker[] = [
     name: "Adi Ahmadi Jauhari, S.T., M.Si",
     role: "Founder",
     company: "PT Arra Busana Muslim",
+    quote: "lorem ipsum",
     icons: [
       {
         icon: "i-simple-icons-instagram",
@@ -85,6 +88,7 @@ export const SPEAKERS: Speaker[] = [
     name: "Chairatunnisa, S.Ak",
     role: "Founder",
     company: "PT Badiuzzaman Cipta Amani",
+    quote: "lorem ipsum",
     icons: [
       {
         icon: "i-simple-icons-instagram",
