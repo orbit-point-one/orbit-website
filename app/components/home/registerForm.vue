@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { postRegisterSeminar } from "~/services/formService";
-import { BUSINESS_OWNER, DOMICILES, HAVE_ATTENDED_SEMINAR, SOURCES, TURNOVER, PURPOSE } from "~/utils/constants";
+import { postRegisterSeminar } from '~/services/formService'
+import { BUSINESS_OWNER, DOMICILES, HAVE_ATTENDED_SEMINAR, SOURCES, TURNOVER, PURPOSE } from '~/utils/constants'
 
-const { buttonType = "hero" } = defineProps<{
-  buttonType?: "hero" | "header";
-}>();
+const { buttonType = 'hero' } = defineProps<{
+  buttonType?: 'hero' | 'header'
+}>()
 
-const toast = useToast();
+const toast = useToast()
 
-const { body: state, validation: schema, run } = postRegisterSeminar();
-const { error, execute } = run();
+const { body: state, validation: schema, run } = postRegisterSeminar()
+const { error, execute } = run()
 
-const isOpen = ref(false);
-const isSuccessModalOpen = ref(false);
+const isOpen = ref(false)
+const isSuccessModalOpen = ref(false)
 
 const onSubmit = async () => {
-  await execute();
+  await execute()
 
   if (error.value) {
     return toast.add({
-      title: "Data gagal dikirim",
-      color: "error",
-      description: error.value.message,
-    });
+      title: 'Data gagal dikirim',
+      color: 'error',
+      description: error.value.message
+    })
   }
 
-  isOpen.value = false;
-  isSuccessModalOpen.value = true;
+  isOpen.value = false
+  isSuccessModalOpen.value = true
   setTimeout(() => {
-    window.location.href =
-      `https://wa.me/+628984967609?text=Halo admin!%0A%0ASaya ${state.value.name} sudah daftar kelas *From Zero to CEO*. Apa yang harus saya lakukan selanjutnya?`;
-  }, 3000);
-};
+    window.location.href
+      = `https://wa.me/+628984967609?text=Halo admin!%0A%0ASaya ${state.value.name} sudah daftar kelas *From Zero to CEO*. Apa yang harus saya lakukan selanjutnya?`
+  }, 3000)
+}
 </script>
 
 <template>
@@ -44,7 +44,9 @@ const onSubmit = async () => {
 
     <template #header="{ close }">
       <div class="w-full flex items-center justify-between">
-        <h3 class="font-bold">From Zero to CEO</h3>
+        <h3 class="font-bold">
+          From Zero to CEO
+        </h3>
         <UButton
           icon="i-lucide-x"
           variant="ghost"
@@ -56,25 +58,62 @@ const onSubmit = async () => {
     </template>
 
     <template #body>
-      <UForm :state class="space-y-5" @submit="onSubmit()">
-        <UFormField name="name" label="Nama">
-          <UInput v-model="state.name" class="w-full" />
+      <UForm
+        :state
+        :schema
+        class="space-y-5"
+        @submit="onSubmit()"
+      >
+        <UFormField
+          name="name"
+          label="Nama"
+        >
+          <UInput
+            v-model="state.name"
+            class="w-full"
+          />
         </UFormField>
 
-        <UFormField name="email" label="Email">
-          <UInput v-model="state.email" class="w-full" />
+        <UFormField
+          name="email"
+          label="Email"
+        >
+          <UInput
+            v-model="state.email"
+            class="w-full"
+          />
         </UFormField>
 
-        <UFormField name="phone" label="Nomor whatsapp aktif">
-          <UInput v-model="state.phone" class="w-full" />
+        <UFormField
+          name="phone"
+          label="Nomor whatsapp aktif"
+        >
+          <UInput
+            v-model="state.phone"
+            class="w-full"
+          />
         </UFormField>
 
-        <UFormField name="age" label="Tanggal lahir">
-          <UInput placeholder="tgl/bln/thn" v-model="state.age" class="w-full" />
+        <UFormField
+          name="age"
+          label="Umur"
+        >
+          <USelect
+            v-model="state.age"
+            :items="AGES"
+            class="w-full"
+          />
         </UFormField>
 
-        <UFormField name="domicile" label="Domisili kamu">
-          <USelect v-model="state.domicile" :items="DOMICILES" class="w-full" />
+        <UFormField
+          name="domicile"
+          label="Domisili"
+        >
+          <USelect
+            v-model="state.domicile"
+            :items="DOMICILES"
+            class="w-full"
+          />
         </UFormField>
 
         <UFormField
@@ -84,13 +123,19 @@ const onSubmit = async () => {
         >
           <UInput
             v-model="state.domicile_other"
-            placeholder="Contoh: Manokwari"
+            placeholder="Contoh: Bandung"
             class="w-full"
           />
         </UFormField>
 
-        <UFormField name="address" label="Isi alamat kamu">
-          <UTextarea v-model="state.address" class="w-full" />
+        <UFormField
+          name="address"
+          label="Alamat"
+        >
+          <UTextarea
+            v-model="state.address"
+            class="w-full"
+          />
         </UFormField>
 
         <UFormField
@@ -115,6 +160,8 @@ const onSubmit = async () => {
           />
         </UFormField>
 
+        <USeparator />
+
         <UFormField
           name="business_owner"
           label="Apakah kamu memiliki usaha?"
@@ -126,12 +173,20 @@ const onSubmit = async () => {
           />
         </UFormField>
 
-        <UFormField name="field" label="Bidang usaha">
-          <USelect v-model="state.field" :items="FIELD" class="w-full" />
+        <UFormField
+          v-if="state.business_owner"
+          name="field"
+          label="Bidang usaha"
+        >
+          <USelect
+            v-model="state.field"
+            :items="FIELD"
+            class="w-full"
+          />
         </UFormField>
 
         <UFormField
-          v-if="state.field === -1"
+          v-if="state.business_owner && state.field === -1"
           name="field_other"
           label="Tulis bidang kamu"
         >
@@ -142,13 +197,22 @@ const onSubmit = async () => {
           />
         </UFormField>
 
-        <UFormField field="long" label="Sudah berapa lama?">
-          <UInput v-model="state.long" class="w-full" />
+        <UFormField
+          v-if="state.business_owner"
+          field="long"
+          label="Sudah berapa lama?"
+        >
+          <USelect
+            v-model="state.long"
+            :items="LONGS"
+            class="w-full"
+          />
         </UFormField>
 
         <UFormField
+          v-if="state.business_owner"
           name="turnover"
-          label="Berapa omset usaha kamu?"
+          label="Berapa omzet usaha kamu?"
         >
           <USelect
             v-model="state.turnover"
@@ -157,9 +221,11 @@ const onSubmit = async () => {
           />
         </UFormField>
 
+        <USeparator />
+
         <UFormField
           name="purpose"
-          label="Apa tujuan kamu mengikuti program ORBIT.1?"
+          label="Apa tujuan kamu mengikuti program ini?"
         >
           <USelect
             v-model="state.purpose"
@@ -168,7 +234,22 @@ const onSubmit = async () => {
           />
         </UFormField>
 
-        <UButton type="submit" loading-auto label="Submit" />
+        <UFormField
+          name="purpose"
+          label="Seberapa siap kamu untuk mengikuti seminar ini?"
+        >
+          <USelect
+            v-model="state.commitment"
+            :items="COMMITMENS"
+            class="w-full"
+          />
+        </UFormField>
+
+        <UButton
+          type="submit"
+          loading-auto
+          label="Submit"
+        />
       </UForm>
     </template>
   </UModal>

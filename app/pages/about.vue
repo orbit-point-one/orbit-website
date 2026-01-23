@@ -358,7 +358,7 @@ const solutions = [
             <h4
               class="text-2xl font-bold text-orbit-beige italic uppercase tracking-tighter"
             >
-              Rizal
+              Muhammad Rizal
             </h4>
             <p
               class="text-secondary font-bold tracking-widest uppercase text-xs opacity-70"
