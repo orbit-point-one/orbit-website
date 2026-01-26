@@ -177,7 +177,7 @@ export const TESTIMONIALS: Testimonial[] = [
 ]
 
 export const PARTNERS: Partner[] = [
-  { name: 'PT Badiuzzaman', logo: '/images/logo-badiuzzaman.png' },
+  { name: 'PT Badiuzzaman Cipta Amani', logo: '/images/logo-badiuzzaman.png' },
   { name: 'TechCrunch', logo: 'https://logo.clearbit.com/techcrunch.com' },
   { name: 'Stripe', logo: 'https://logo.clearbit.com/stripe.com' },
   { name: 'AWS', logo: 'https://logo.clearbit.com/aws.amazon.com' },
