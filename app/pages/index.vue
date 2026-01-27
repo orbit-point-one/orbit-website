@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { SPEAKERS } from "~/utils/constants";
+import { SPEAKERS } from '~/utils/constants'
 
-const TITLE = "From Zero to CEO";
-const DESCRIPTION = "Wujudkan bisnis impianmu dimulai hari ini.";
+const TITLE = 'From Zero to CEO'
+const DESCRIPTION = 'Wujudkan bisnis impianmu dimulai hari ini.'
 
 useHead({
-  title: TITLE,
-});
+  title: TITLE
+})
 
 useSeoMeta({
   title: TITLE,
@@ -14,8 +14,8 @@ useSeoMeta({
   ogTitle: TITLE,
   ogDescription: DESCRIPTION,
   twitterTitle: TITLE,
-  twitterDescription: DESCRIPTION,
-});
+  twitterDescription: DESCRIPTION
+})
 </script>
 
 <template>
@@ -28,7 +28,7 @@ useSeoMeta({
       :ui="{
         root: 'py-8 2x10l:py- bg-[url(/images/hero-background.png)] bg-no-repeat bg-center bg-cover',
         headline: 'text-4xl',
-        description: 'text-neutral-700 dark:text-neutral-100',
+        description: 'text-neutral-700 dark:text-neutral-100'
       }"
     >
       <template #title>
@@ -77,7 +77,10 @@ useSeoMeta({
                 <div
                   class="flex items-center justify-center size-5 rounded-full bg-success"
                 >
-                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                  <UIcon
+                    name="i-lucide-check"
+                    class="size-4 text-white"
+                  />
                 </div>
                 Mentoring oleh ahli
               </div>
@@ -85,7 +88,10 @@ useSeoMeta({
                 <div
                   class="flex items-center justify-center size-5 rounded-full bg-success"
                 >
-                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                  <UIcon
+                    name="i-lucide-check"
+                    class="size-4 text-white"
+                  />
                 </div>
                 Kesempatan pitching
               </div>
@@ -93,7 +99,10 @@ useSeoMeta({
                 <div
                   class="flex items-center justify-center size-5 rounded-full bg-success"
                 >
-                  <UIcon name="i-lucide-check" class="size-4 text-white" />
+                  <UIcon
+                    name="i-lucide-check"
+                    class="size-4 text-white"
+                  />
                 </div>
                 Dapat sertifikat
               </div>
@@ -104,10 +113,17 @@ useSeoMeta({
     </UPageHero>
 
     <!-- Speakers Section -->
-    <section id="speaker" class="py-24 px-6 relative overflow-hidden">
+    <section
+      id="speaker"
+      class="py-24 px-6 relative overflow-hidden"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="text-left">
-          <UBadge variant="subtle" label="KEYNOTE SPEAKER" class="mb-4" />
+          <UBadge
+            variant="subtle"
+            label="KEYNOTE SPEAKER"
+            class="mb-4"
+          />
           <h3
             class="tracking-tighter text-3xl md:text-5xl font-black flex lg:flex-wrap max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
           >
@@ -124,7 +140,12 @@ useSeoMeta({
         <div
           class="pt-40 flex max-md:flex-col justify-evenly gap-40 md:gap-8 xl:gap-28"
         >
-          <PersonCard v-for="person in SPEAKERS" :person class="md:w-1/3" />
+          <PersonCard
+            v-for="(person, key) in SPEAKERS"
+            :key
+            :person
+            class="md:w-1/3"
+          />
         </div>
       </div>
     </section>
@@ -148,7 +169,11 @@ useSeoMeta({
       />
       <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-left">
-          <UBadge variant="subtle" label="BENEFIT" class="mb-4" />
+          <UBadge
+            variant="subtle"
+            label="BENEFIT"
+            class="mb-4"
+          />
           <h3
             class="tracking-tighter text-3xl md:text-5xl font-black flex max-lg:flex-col lg:items-center justify-start gap-1 lg:gap-3"
           >
@@ -168,7 +193,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <UIcon name="i-lucide-brain" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-brain"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -189,7 +217,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <UIcon name="i-lucide-user-check" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-user-check"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -210,7 +241,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <UIcon name="i-lucide-presentation" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-presentation"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -231,7 +265,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <UIcon name="i-lucide-network" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-network"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -252,7 +289,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100"
               >
-                <UIcon name="i-lucide-crown" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-crown"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -273,7 +313,10 @@ useSeoMeta({
               <div
                 class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-100"
               >
-                <UIcon name="i-lucide-refresh-cw" class="size-6 text-primary" />
+                <UIcon
+                  name="i-lucide-refresh-cw"
+                  class="size-6 text-primary"
+                />
               </div>
             </div>
             <div>
@@ -332,7 +375,11 @@ useSeoMeta({
     <!-- Partnership Section -->
     <section class="py-32 px-6 relative bg-orbit-black">
       <div class="w-full mx-auto text-center relative z-10">
-        <UBadge variant="subtle" label="PARTNERSHIP" class="mb-4" />
+        <UBadge
+          variant="subtle"
+          label="PARTNERSHIP"
+          class="mb-4"
+        />
         <h3
           class="tracking-tighter text-3xl md:text-5xl font-black flex flex-col items-center justify-center gap-1 lg:gap-3"
         >
@@ -352,45 +399,94 @@ useSeoMeta({
         </h3>
         <div class="pt-40">
           <UMarquee pause-on-hover>
-            <UTooltip text="Amanee Farm" :delay-duration="0">
+            <UTooltip
+              text="Amanee Farm"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/amaneefarm">
-                <NuxtImg src="/images/sponsorship/amanee-farm.png" alt="Amanee Farm" class="w-24" />
+                <NuxtImg
+                  src="/images/sponsorship/amanee-farm.png"
+                  alt="Amanee Farm"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Amani Laundry" :delay-duration="0">
+            <UTooltip
+              text="Amani Laundry"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/amanilaundry/">
-                <NuxtImg src="/images/sponsorship/amani-laundry.png" alt="Amani Laundry" class="w-24"/>
+                <NuxtImg
+                  src="/images/sponsorship/amani-laundry.png"
+                  alt="Amani Laundry"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Amani Store" :delay-duration="0">
+            <UTooltip
+              text="Amani Store"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/amani_store2025/">
-                <NuxtImg src="/images/sponsorship/amani-store.png" alt="Amani Store" class="w-24" />
-              </NuxtLink> 
+                <NuxtImg
+                  src="/images/sponsorship/amani-store.png"
+                  alt="Amani Store"
+                  class="w-24"
+                />
+              </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Innerheal" :delay-duration="0">
+            <UTooltip
+              text="Innerheal"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/innerheal.therapy/">
-                <NuxtImg src="/images/sponsorship/innerheal.png" alt="Innerheal" class="w-24" />
+                <NuxtImg
+                  src="/images/sponsorship/innerheal.png"
+                  alt="Innerheal"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Putra Amani Teknik" :delay-duration="0">
+            <UTooltip
+              text="Putra Amani Teknik"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/sumurborsukabumi/">
-                <NuxtImg src="/images/sponsorship/pat.png" alt="Putra Amani Teknik" class="w-24" />
+                <NuxtImg
+                  src="/images/sponsorship/pat.png"
+                  alt="Putra Amani Teknik"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Snap Z" :delay-duration="0">
+            <UTooltip
+              text="Snap Z"
+              :delay-duration="0"
+            >
               <NuxtLink to="https://www.instagram.com/snapz.jpg/">
-                <NuxtImg src="/images/sponsorship/snap-z.png" alt="Snap Z" class="w-24" />
+                <NuxtImg
+                  src="/images/sponsorship/snap-z.png"
+                  alt="Snap Z"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="Yayasan Khairul Ummat" :delay-duration="0">
+            <UTooltip
+              text="Yayasan Khairul Ummat"
+              :delay-duration="0"
+            >
               <NuxtLink to="#">
-                <NuxtImg src="/images/sponsorship/yayasan-khairul-ummat.png" alt="Yayasan Khairul Ummat" class="w-24"/>
+                <NuxtImg
+                  src="/images/sponsorship/yayasan-khairul-ummat.png"
+                  alt="Yayasan Khairul Ummat"
+                  class="w-24"
+                />
               </NuxtLink>
             </UTooltip>
           </UMarquee>
@@ -422,10 +518,10 @@ useSeoMeta({
       <!-- Orbital circles at the bottom -->
       <div
         class="absolute bottom-0 left-1/2 -translate-x-1/2 w-250 h-125 border-t border-orbit-beige/10 rounded-t-full opacity-30 pointer-events-none"
-      ></div>
+      />
       <div
         class="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-100 border-t border-orbit-primary/10 rounded-t-full opacity-20 pointer-events-none"
-      ></div>
+      />
     </section>
   </div>
 </template>

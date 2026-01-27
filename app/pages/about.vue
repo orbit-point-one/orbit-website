@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { PARTNERS } from '~/utils/constants'
-
 const TITLE = 'Tentang Kami'
 const DESCRIPTION = 'Ketahui siapa kami di Orbit'
 
@@ -123,7 +121,7 @@ const solutions = [
     <section class="py-24 px-6 bg-neutral-100 dark:bg-neutral-950 border-y border-neutral-200 dark:border-neutral-800">
       <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
         <div
-          class="p-12 glass-morphism rounded-3xl border border-solid border-neutral-200 dark:border-neutral-800 group hover:border-primary/30 transition-all bg-neutral-200"
+          class="p-12 glass-morphism rounded-3xl border border-solid border-neutral-200 dark:border-neutral-800 group hover:border-primary/30 transition-all bg-neutral-200 dark:bg-neutral-900"
         >
           <Icon
             name="heroicons:map"
@@ -139,7 +137,7 @@ const solutions = [
           </p>
         </div>
         <div
-          class="p-12 glass-morphism rounded-3xl border border-solid border-neutral-200 dark:border-neutral-800 group hover:border-primary/30 transition-all bg-neutral-200"
+          class="p-12 glass-morphism rounded-3xl border border-solid border-neutral-200 dark:border-neutral-800 group hover:border-primary/30 transition-all bg-neutral-200 dark:bg-neutral-900"
         >
           <Icon
             name="heroicons:rocket-launch"
@@ -226,7 +224,7 @@ const solutions = [
     </section>
 
     <!-- Team Section -->
-    <section class="py-24 px-6 bg-neutral-200 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
+    <section class="py-24 px-6 bg-neutral-100 dark:bg-neutral-900 border-y border-neutral-200 dark:border-neutral-800">
       <div class="max-w-6xl mx-auto text-center">
         <UBadge
           variant="subtle"
@@ -238,7 +236,7 @@ const solutions = [
         >
           JUMPAI TIM ORBIT YANG
           <AnimationGradientText
-            text="BERPENGALAMAN"
+            text="LUAR BIASA"
             :colors="['#A80606', '#E9C46A']"
             :animation-speed="10"
             :show-border="false"
