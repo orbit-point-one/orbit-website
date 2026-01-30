@@ -220,7 +220,7 @@ export const BUSINESS_OWNER = [
   { label: 'Ya', value: true }
 ]
 
-export const FIELD = [
+export const BUSINESS_CATEGORIES = [
   { label: 'Kuliner & F&B', value: 0 },
   { label: 'Fashion & Lifestyle', value: 1 },
   { label: 'Digital / Startup / Tech', value: 2 },
@@ -231,7 +231,7 @@ export const FIELD = [
   { label: 'Lainnya', value: -1 }
 ]
 
-export const TURNOVER = [
+export const BUSINESS_OMZETS = [
   { label: 'Belum ada omzet', value: 0 },
   { label: '< Rp 1 juta', value: 1 },
   { label: 'Rp 1-5 juta', value: 2 },
@@ -239,14 +239,14 @@ export const TURNOVER = [
   { label: '> Rp 10 juta ', value: 4 }
 ]
 
-export const LONGS = [
+export const BUSINESS_DURATIONS = [
   { label: '< 1 tahun', value: 0 },
   { label: '1 - 3 tahun', value: 1 },
   { label: '4 - 5 tahun', value: 2 },
   { label: '> 5 tahun', value: 3 }
 ]
 
-export const COMMITMENS = [
+export const COMMITMENTS = [
   { label: 'Siap belajar dan dibimbing', value: 0 },
   { label: 'Siap sampai ikut kelas lanjutan', value: 1 },
   { label: 'Siap praktik dan dievaluasi', value: 2 },
@@ -260,11 +260,4 @@ export const PURPOSE = [
   { label: 'Naik level dari UMKM ke bisnis serius', value: 3 },
   { label: 'Siap pitching ke investor', value: 4 },
   { label: 'Membangun standar baru dalam bisnis', value: 5 }
-]
-
-export const COMMITMENT = [
-  { label: 'Siap belajar dan dibimbing', value: 0 },
-  { label: 'Siap ikut kelas lanjutan', value: 1 },
-  { label: 'Siap praktik dan dievaluasi', value: 2 },
-  { label: 'Masih eksplorasi', value: 3 }
 ]

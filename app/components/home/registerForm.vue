@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { postRegisterSeminar } from '~/services/formService'
-import { BUSINESS_OWNER, DOMICILES, HAVE_ATTENDED_SEMINAR, SOURCES, TURNOVER, PURPOSE } from '~/utils/constants'
 
 const { buttonType = 'hero' } = defineProps<{
   buttonType?: 'hero' | 'header'
@@ -175,23 +174,23 @@ const onSubmit = async () => {
 
         <UFormField
           v-if="state.business_owner"
-          name="field"
+          name="business_category"
           label="Bidang usaha"
         >
           <USelect
-            v-model="state.field"
-            :items="FIELD"
+            v-model="state.business_category"
+            :items="BUSINESS_CATEGORIES"
             class="w-full"
           />
         </UFormField>
 
         <UFormField
-          v-if="state.business_owner && state.field === -1"
+          v-if="state.business_owner && state.business_category === -1"
           name="field_other"
           label="Tulis bidang kamu"
         >
           <UInput
-            v-model="state.domicile_other"
+            v-model="state.business_category_other"
             placeholder="Contoh: Pertambangan"
             class="w-full"
           />
@@ -199,24 +198,24 @@ const onSubmit = async () => {
 
         <UFormField
           v-if="state.business_owner"
-          field="long"
+          field="business_duration"
           label="Sudah berapa lama?"
         >
           <USelect
-            v-model="state.long"
-            :items="LONGS"
+            v-model="state.business_duration"
+            :items="BUSINESS_DURATIONS"
             class="w-full"
           />
         </UFormField>
 
         <UFormField
           v-if="state.business_owner"
-          name="turnover"
+          name="business_omzet"
           label="Berapa omzet usaha kamu?"
         >
           <USelect
-            v-model="state.turnover"
-            :items="TURNOVER"
+            v-model="state.business_omzet"
+            :items="BUSINESS_OMZETS"
             class="w-full"
           />
         </UFormField>
@@ -235,12 +234,12 @@ const onSubmit = async () => {
         </UFormField>
 
         <UFormField
-          name="purpose"
+          name="commitment"
           label="Seberapa siap kamu untuk mengikuti seminar ini?"
         >
           <USelect
             v-model="state.commitment"
-            :items="COMMITMENS"
+            :items="COMMITMENTS"
             class="w-full"
           />
         </UFormField>

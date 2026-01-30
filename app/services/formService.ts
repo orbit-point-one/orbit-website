@@ -1,5 +1,21 @@
 import * as v from 'valibot'
-import { DOMICILES, SOURCES, FIELD, TURNOVER, COMMITMENT } from '~/utils/constants'
+
+enum GFORM_FIELD {
+  NAME = 'entry.644181360',
+  EMAIL = 'entry.361973129',
+  PHONE = 'entry.1348993263',
+  AGE = 'entry.749965307',
+  DOMICILE = 'entry.2137563503',
+  ADDRESS = 'entry.1345396525',
+  SOURCE = 'entry.780860672',
+  HAVE_ATTENDED = 'entry.67130838',
+  BUSINESS_OWNER = 'entry.1901265505',
+  BUSINESS_CATEGORY = 'entry.2100133099',
+  BUSINESS_DURATION = 'entry.792382576',
+  BUSINESS_OMZET = 'entry.171131439',
+  PURPOSE = 'entry.1355557989',
+  COMMITMENT = 'entry.319055880'
+}
 
 export const postRegisterSeminar = () => {
   const GOOGLE_FORM_ID
@@ -17,10 +33,10 @@ export const postRegisterSeminar = () => {
     info_source: 0,
     have_attended: false,
     business_owner: false,
-    field: 0,
-    field_other: '',
-    long: 0,
-    turnover: 0,
+    business_category: 0,
+    business_category_other: '',
+    business_duration: 0,
+    business_omzet: 0,
     purpose: 0,
     commitment: 0
   })
@@ -44,72 +60,67 @@ export const postRegisterSeminar = () => {
     info_source: v.number('Sumber info tidak valid'),
     have_attended: v.boolean('Data tidak valid'),
     business_owner: v.boolean('Data tidak valid'),
-    field: v.optional(v.number('Bidang usaha tidak valid')),
-    field_other: v.optional(v.string()),
-    long: v.optional(v.number('Total lama tidak valid')),
-    turnover: v.optional(v.number('Omzet usaha tidak valid')),
+    business_category: v.optional(v.number('Bidang usaha tidak valid')),
+    business_category_other: v.optional(v.string()),
+    business_duration: v.optional(v.number('Total lama tidak valid')),
+    business_omzet: v.optional(v.number('Omzet usaha tidak valid')),
     purpose: v.number('Tujuanmu tidak valid'),
     commitment: v.number('Komitmen tidak valid')
   })
 
   const payload = computed(() => {
-    const domicile
-      = body.value.domicile === -1
-        ? body.value.domicile_other
-        : (DOMICILES.find(d => d.value === body.value.domicile)?.label ?? '')
-
-    const source
-      = SOURCES.find(s => s.value === body.value.info_source)?.label ?? ''
-
-    const haveAttended = body.value.have_attended ? 'Ya' : 'Tidak'
-
-    const businessOwner = body.value.business_owner ? 'Ya' : 'Tidak'
-    const isBusinessOwner = businessOwner === 'Ya'
-
-    let field = ''
-    let long = ''
-    let turnover = ''
-    let purpose = ''
-    let age = ''
-    let commitment = ''
-
-    if (isBusinessOwner) {
-      field = body.value.field === -1
-        ? body.value.field_other
-        : (FIELD.find(f => f.value === body.value.field)?.label ?? '')
-
-      long
-        = LONGS.find(l => l.value === body.value.long)?.label ?? ''
-
-      turnover
-        = TURNOVER.find(t => t.value === body.value.turnover)?.label ?? ''
-
-      purpose
-        = PURPOSE.find(p => p.value === body.value.purpose)?.label ?? ''
-
-      age
-        = AGES.find(p => p.value === body.value.age)?.label ?? ''
-
+    const {
+      name,
+      email,
+      phone,
+      age,
+      domicile,
+      domicile_other,
+      address,
+      info_source,
+      have_attended,
+      business_owner,
+      business_category,
+      business_category_other,
+      business_duration,
+      business_omzet,
+      purpose,
       commitment
-        = COMMITMENT.find(c => c.value === body.value.commitment)?.label ?? ''
+    } = unref(body)
+
+    const form: Record<string, string> = {
+      [GFORM_FIELD.NAME]: name,
+      [GFORM_FIELD.EMAIL]: email,
+      [GFORM_FIELD.PHONE]: phone,
+      [GFORM_FIELD.ADDRESS]: address,
+      [GFORM_FIELD.AGE]: AGES.find(p => p.value === age)?.label ?? '',
+      [GFORM_FIELD.SOURCE]: SOURCES.find(s => s.value === info_source)?.label ?? '',
+      [GFORM_FIELD.HAVE_ATTENDED]: have_attended ? 'Ya' : 'Tidak',
+      [GFORM_FIELD.PURPOSE]: PURPOSE.find(p => p.value === purpose)?.label ?? '',
+      [GFORM_FIELD.COMMITMENT]: COMMITMENTS.find(c => c.value === commitment)?.label ?? '',
+      [GFORM_FIELD.BUSINESS_OWNER]: business_owner ? 'Ya' : 'Tidak'
     }
 
-    return {
-      'entry.644181360': body.value.name,
-      'entry.361973129': body.value.email,
-      'entry.1348993263': body.value.phone,
-      'entry.749965307': age,
-      'entry.2137563503': domicile,
-      'entry.1345396525': body.value.address,
-      'entry.780860672': source,
-      'entry.67130838': haveAttended,
-      'entry.1901265505': businessOwner,
-      'entry.2100133099': field,
-      'entry.792382576': long,
-      'entry.171131439': turnover,
-      'entry.1355557989': purpose,
-      'entry.319055880': commitment
+    const isNotOtherDomicile = domicile !== -1
+    if (isNotOtherDomicile) {
+      form[GFORM_FIELD.DOMICILE] = DOMICILES.find(d => d.value === domicile)?.label ?? ''
+    } else {
+      form[GFORM_FIELD.DOMICILE] = domicile_other
     }
+
+    if (business_owner) {
+      form[GFORM_FIELD.BUSINESS_DURATION] = BUSINESS_DURATIONS.find(l => l.value === business_duration)?.label ?? ''
+      form[GFORM_FIELD.BUSINESS_OMZET] = BUSINESS_OMZETS.find(t => t.value === business_omzet)?.label ?? ''
+
+      const isNotOtherBusinessCategory = business_category !== -1
+      if (isNotOtherBusinessCategory) {
+        form[GFORM_FIELD.BUSINESS_CATEGORY] = (BUSINESS_CATEGORIES.find(f => f.value === business_category)?.label ?? '')
+      } else {
+        form[GFORM_FIELD.BUSINESS_CATEGORY] = business_category_other
+      }
+    }
+
+    return form
   })
 
   const run = () =>
@@ -121,5 +132,5 @@ export const postRegisterSeminar = () => {
       }
     })
 
-  return { body, validation, run }
+  return { payload, body, validation, run }
 }
