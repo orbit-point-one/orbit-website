@@ -1,13 +1,13 @@
-import type { UseFetchOptions } from "nuxt/app";
+import type { UseFetchOptions } from 'nuxt/app'
 
 export const useMutation = <T>(
   url: string | (() => string),
-  options?: UseFetchOptions<T>,
+  options?: UseFetchOptions<T>
 ) =>
   useFetch(url, {
-    method: "POST",
+    method: 'POST',
     ...options,
     server: false,
     immediate: false,
-    $fetch: useNuxtApp().$api as typeof $fetch,
-  });
+    $fetch: useNuxtApp().$api as typeof $fetch
+  })

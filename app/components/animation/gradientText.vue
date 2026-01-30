@@ -1,38 +1,37 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 interface GradientTextProps {
-  text: string;
-  className?: string;
-  colors?: string[];
-  animationSpeed?: number;
-  showBorder?: boolean;
+  text: string
+  className?: string
+  colors?: string[]
+  animationSpeed?: number
+  showBorder?: boolean
 }
 
 const props = withDefaults(defineProps<GradientTextProps>(), {
-  text: '',
   className: '',
   colors: () => ['#ffaa40', '#9c40ff', '#ffaa40'],
   animationSpeed: 8,
   showBorder: false
-});
+})
 
 const gradientStyle = computed(() => ({
-  backgroundImage: `linear-gradient(to right, ${props.colors.join(', ')})`,
-  animationDuration: `${props.animationSpeed}s`,
-  backgroundSize: '300% 100%',
+  'backgroundImage': `linear-gradient(to right, ${props.colors.join(', ')})`,
+  'animationDuration': `${props.animationSpeed}s`,
+  'backgroundSize': '300% 100%',
   '--animation-duration': `${props.animationSpeed}s`
-}));
+}))
 
 const borderStyle = computed(() => ({
   ...gradientStyle.value
-}));
+}))
 
 const textStyle = computed(() => ({
   ...gradientStyle.value,
   backgroundClip: 'text',
   WebkitBackgroundClip: 'text'
-}));
+}))
 </script>
 
 <template>
@@ -50,7 +49,10 @@ const textStyle = computed(() => ({
       />
     </div>
 
-    <div class="inline-block relative z-2 text-transparent bg-cover animate-gradient cursor-text" :style="textStyle">
+    <div
+      class="inline-block relative z-2 text-transparent bg-cover animate-gradient cursor-text"
+      :style="textStyle"
+    >
       {{ text }}
     </div>
   </div>

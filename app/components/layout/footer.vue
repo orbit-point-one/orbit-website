@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const middleMenus = [
   {
-    label: "Beranda",
-    to: "/",
+    label: 'Beranda',
+    to: '/'
   },
   {
-    label: "Tentang kami",
-    to: "/about",
-  },
-];
+    label: 'Tentang kami',
+    to: '/about'
+  }
+]
 </script>
 
 <template>
@@ -18,7 +18,10 @@ const middleMenus = [
   >
     <template #left>
       <div class="flex flex-col gap-5">
-        <NuxtImg src="/images/logo.svg" class="max-lg:mx-auto w-24" />
+        <NuxtImg
+          src="/images/logo.svg"
+          class="max-lg:mx-auto w-24"
+        />
         <p
           class="w-full sm:w-[60%] max-lg:mx-auto max-lg:text-center lg:w-[70%]"
         >
@@ -30,24 +33,31 @@ const middleMenus = [
     </template>
 
     <div class="self-center max-lg:py-5 space-y-3 place-self-start">
-      <h3 class="font-bold text-xl">Navigasi</h3>
+      <h3 class="font-bold text-xl">
+        Navigasi
+      </h3>
       <UNavigationMenu
         orientation="vertical"
         :items="middleMenus"
         variant="link"
         :ui="{
           root: '-translate-x-2',
-          link: 'text-white/80 hover:text-white/50',
+          link: 'text-white/80 hover:text-white/50'
         }"
       />
     </div>
 
     <template #right>
       <div class="w-full max-lg:text-center lg:w-[70%]">
-        <h3 class="font-bold text-xl">Hubungi Kami</h3>
+        <h3 class="font-bold text-xl">
+          Hubungi Kami
+        </h3>
         <ul class="space-y-2 mt-5">
           <li class="flex max-lg:justify-center items-center gap-3">
-            <UIcon name="i-lucide-mail" class="size-5 max-lg:hidden" />
+            <UIcon
+              name="i-lucide-mail"
+              class="size-5 max-lg:hidden"
+            />
             orbitpointone@gmail.com
           </li>
           <li class="flex max-lg:justify-center items-center gap-3">
@@ -59,7 +69,10 @@ const middleMenus = [
           </li>
           <li class="mt-3 flex max-lg:justify-center gap-3">
             <div>
-              <UIcon name="i-lucide-map-pin" class="size-5 max-lg:hidden" />
+              <UIcon
+                name="i-lucide-map-pin"
+                class="size-5 max-lg:hidden"
+              />
             </div>
             <div>
               Ruko Bumi Asri Jl. Cikiray Kidul No.A6, Sukamanah, Kec. Cisaat,

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from "@nuxt/ui";
+import type { NavigationMenuItem } from '@nuxt/ui'
 
-const route = useRoute();
+const route = useRoute()
 
 const items: NavigationMenuItem[] = [
   {
-    label: "Beranda",
-    to: "/",
+    label: 'Beranda',
+    to: '/'
   },
   {
-    label: "Tentang kami",
-    to: "/about",
-  },
-];
+    label: 'Tentang kami',
+    to: '/about'
+  }
+]
 </script>
 
 <template>
@@ -20,9 +20,15 @@ const items: NavigationMenuItem[] = [
     <template #left>
       <div class="flex items-center h-full w-full gap-3">
         <NuxtLink to="/">
-          <NuxtImg src="/images/logo-red.svg" class="w-14" />
+          <NuxtImg
+            src="/images/logo-red.svg"
+            class="w-14"
+          />
         </NuxtLink>
-        <div v-if="route.path === '/'" class="translate-y-1">
+        <div
+          v-if="route.path === '/'"
+          class="translate-y-1"
+        >
           <UIcon name="i-lucide-x" />
         </div>
         <NuxtLink
@@ -41,13 +47,22 @@ const items: NavigationMenuItem[] = [
     <template #right>
       <div class="max-lg:hidden flex items-center gap-3">
         <UColorModeButton />
-        <UNavigationMenu :items :ui="{ list: 'gap-3' }" />
-        <HomeRegisterForm v-if="route.path === '/'" button-type="header" />
+        <UNavigationMenu
+          :items
+          :ui="{ list: 'gap-3' }"
+        />
+        <HomeRegisterForm
+          v-if="route.path === '/'"
+          button-type="header"
+        />
       </div>
     </template>
 
     <template #body>
-      <UNavigationMenu :items orientation="vertical" />
+      <UNavigationMenu
+        :items
+        orientation="vertical"
+      />
     </template>
   </UHeader>
 </template>

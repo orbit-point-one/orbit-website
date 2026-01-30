@@ -1,10 +1,12 @@
 <template>
-  <LayoutHeader />
+  <div>
+    <LayoutHeader />
 
-  <UMain>
-    <slot />
-  </UMain>
+    <UMain>
+      <slot />
+    </UMain>
 
-  <WhatsappButton />
-  <LayoutFooter />
+    <WhatsappButton />
+    <LayoutFooter />
+  </div>
 </template>

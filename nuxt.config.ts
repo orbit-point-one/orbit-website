@@ -1,72 +1,72 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const IMAGE = "/images/logo.svg";
-const IMAGE_ALT = "Logo Orbit";
+const IMAGE = '/images/logo.svg'
+const IMAGE_ALT = 'Logo Orbit'
 
 export default defineNuxtConfig({
   modules: [
-    "@nuxt/eslint",
-    "@nuxt/ui",
-    "@nuxt/hints",
-    "@nuxt/image",
-    "@nuxt/test-utils",
-    "@vueuse/nuxt",
-    "@vueuse/motion/nuxt",
-    "dayjs-nuxt",
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@nuxt/hints',
+    '@nuxt/image',
+    '@nuxt/test-utils',
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
+    'dayjs-nuxt'
   ],
 
   devtools: {
-    enabled: true,
+    enabled: true
   },
-
-  css: ["~/assets/css/main.css"],
 
   app: {
     head: {
-      titleTemplate: "%s - Orbit Point One",
+      titleTemplate: '%s - Orbit Point One',
       meta: [
         {
-          name: "twitter:image",
-          content: IMAGE,
+          name: 'twitter:image',
+          content: IMAGE
         },
         {
-          name: "twitter:image:alt",
-          content: IMAGE_ALT,
+          name: 'twitter:image:alt',
+          content: IMAGE_ALT
         },
         {
-          name: "og:image",
-          content: IMAGE,
+          name: 'og:image',
+          content: IMAGE
         },
         {
-          name: "og:image:alt",
-          content: IMAGE_ALT,
-        },
-      ],
-    },
+          name: 'og:image:alt',
+          content: IMAGE_ALT
+        }
+      ]
+    }
   },
 
-  routeRules: {
-    "/": { prerender: true },
+  css: ['~/assets/css/main.css'],
+
+  colorMode: {
+    preference: 'light'
   },
 
   runtimeConfig: {
     public: {
-      apiUrl: "",
-    },
+      apiUrl: ''
+    }
   },
 
-  compatibilityDate: "2025-01-15",
-
-  colorMode: {
-    preference: "light",
+  routeRules: {
+    '/': { prerender: true }
   },
+
+  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {
       stylistic: {
-        commaDangle: "never",
-        braceStyle: "1tbs",
-      },
-    },
-  },
-});
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  }
+})

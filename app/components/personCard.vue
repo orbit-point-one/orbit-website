@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { person } = defineProps<{ person: Speaker }>();
+const { person } = defineProps<{ person: Speaker }>()
 </script>
 
 <template>
@@ -17,16 +17,21 @@ const { person } = defineProps<{ person: Speaker }>();
       class="xl:group-hover:opacity-100 xl:opacity-0 transition-opacity duration-150 absolute top-0 w-full h-96 z-30 bg-linear-to-t from-[#1C1C1C] to-transparent"
     >
       <div class="absolute bottom-0 px-8 pb-10 flex flex-col gap-1">
-        <div class="font-bold text-xl text-white">{{ person.name }}</div>
+        <div class="font-bold text-xl text-white">
+          {{ person.name }}
+        </div>
         <div class="text-white">
-          <template v-if="!person.role && !person.company"> ??? </template>
+          <template v-if="!person.role && !person.company">
+            ???
+          </template>
           <template v-else>
             {{ person.role }} at {{ person.company }}
           </template>
         </div>
         <div class="flex items-center flex-wrap gap-1 mt-2">
           <UButton
-            v-for="v in person.icons"
+            v-for="(v, key) in person.icons"
+            :key
             :icon="v.icon"
             :to="v.link"
             target="_blank"

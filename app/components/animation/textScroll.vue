@@ -1,5 +1,8 @@
 <template>
-  <h2 ref="containerRef" :class="`my-5 ${containerClassName}`">
+  <h2
+    ref="containerRef"
+    :class="`my-5 ${containerClassName}`"
+  >
     <p
       :class="`leading-relaxed font-semibold ${textClassName}`"
       style="font-size: clamp(1.6rem, 4vw, 3rem)"
@@ -16,22 +19,22 @@
 </template>
 
 <script setup lang="ts">
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 interface Props {
-  children: string;
-  scrollContainerRef?: { current: HTMLElement | null };
-  enableBlur?: boolean;
-  baseOpacity?: number;
-  baseRotation?: number;
-  blurStrength?: number;
-  containerClassName?: string;
-  textClassName?: string;
-  rotationEnd?: string;
-  wordAnimationEnd?: string;
+  children: string
+  scrollContainerRef?: { current: HTMLElement | null }
+  enableBlur?: boolean
+  baseOpacity?: number
+  baseRotation?: number
+  blurStrength?: number
+  containerClassName?: string
+  textClassName?: string
+  rotationEnd?: string
+  wordAnimationEnd?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -39,77 +42,77 @@ const props = withDefaults(defineProps<Props>(), {
   baseOpacity: 0.1,
   baseRotation: 3,
   blurStrength: 4,
-  containerClassName: "",
-  textClassName: "",
-  rotationEnd: "bottom bottom",
-  wordAnimationEnd: "bottom bottom",
-});
+  containerClassName: '',
+  textClassName: '',
+  rotationEnd: 'bottom bottom',
+  wordAnimationEnd: 'bottom bottom'
+})
 
-const containerRef = useTemplateRef<HTMLElement>("containerRef");
-let scrollTriggerInstances: ScrollTrigger[] = [];
+const containerRef = useTemplateRef<HTMLElement>('containerRef')
+let scrollTriggerInstances: ScrollTrigger[] = []
 
 const splitText = computed(() => {
-  const text = typeof props.children === "string" ? props.children : "";
+  const text = typeof props.children === 'string' ? props.children : ''
   return text.split(/(\s+)/).map((word, index) => ({
     text: word,
     isWhitespace: word.match(/^\s+$/) !== null,
-    key: index,
-  }));
-});
+    key: index
+  }))
+})
 
 const initializeAnimation = () => {
-  const el = containerRef.value;
-  if (!el) return;
+  const el = containerRef.value
+  if (!el) return
 
-  scrollTriggerInstances.forEach((trigger) => trigger.kill());
-  scrollTriggerInstances = [];
+  scrollTriggerInstances.forEach(trigger => trigger.kill())
+  scrollTriggerInstances = []
 
-  const scroller =
-    props.scrollContainerRef && props.scrollContainerRef.current
+  const scroller
+    = props.scrollContainerRef && props.scrollContainerRef.current
       ? props.scrollContainerRef.current
-      : window;
+      : window
 
   const rotationTl = gsap.fromTo(
     el,
-    { transformOrigin: "0% 50%", rotate: props.baseRotation },
+    { transformOrigin: '0% 50%', rotate: props.baseRotation },
     {
-      ease: "none",
+      ease: 'none',
       rotate: 0,
       scrollTrigger: {
         trigger: el,
         scroller,
-        start: "top bottom",
+        start: 'top bottom',
         end: props.rotationEnd,
-        scrub: true,
-      },
-    },
-  );
+        scrub: true
+      }
+    }
+  )
 
   if (rotationTl.scrollTrigger) {
-    scrollTriggerInstances.push(rotationTl.scrollTrigger);
+    scrollTriggerInstances.push(rotationTl.scrollTrigger)
   }
 
-  const wordElements = el.querySelectorAll(".word");
+  const wordElements = el.querySelectorAll('.word')
 
   const opacityTl = gsap.fromTo(
     wordElements,
-    { opacity: props.baseOpacity, willChange: "opacity" },
+    { opacity: props.baseOpacity, willChange: 'opacity' },
     {
-      ease: "none",
+      ease: 'none',
       opacity: 1,
       stagger: 0.05,
       scrollTrigger: {
         trigger: el,
         scroller,
-        start: "top bottom-=20%",
+        start: 'top bottom-=20%',
         end: props.wordAnimationEnd,
-        scrub: true,
-      },
-    },
-  );
+        scrub: true
+      }
+    }
+  )
 
   if (opacityTl.scrollTrigger) {
-    scrollTriggerInstances.push(opacityTl.scrollTrigger);
+    scrollTriggerInstances.push(opacityTl.scrollTrigger)
   }
 
   if (props.enableBlur) {
@@ -117,32 +120,32 @@ const initializeAnimation = () => {
       wordElements,
       { filter: `blur(${props.blurStrength}px)` },
       {
-        ease: "none",
-        filter: "blur(0px)",
+        ease: 'none',
+        filter: 'blur(0px)',
         stagger: 0.05,
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: "top bottom-=20%",
+          start: 'top bottom-=20%',
           end: props.wordAnimationEnd,
-          scrub: true,
-        },
-      },
-    );
+          scrub: true
+        }
+      }
+    )
 
     if (blurTl.scrollTrigger) {
-      scrollTriggerInstances.push(blurTl.scrollTrigger);
+      scrollTriggerInstances.push(blurTl.scrollTrigger)
     }
   }
-};
+}
 
 onMounted(() => {
-  initializeAnimation();
-});
+  initializeAnimation()
+})
 
 onUnmounted(() => {
-  scrollTriggerInstances.forEach((trigger) => trigger.kill());
-});
+  scrollTriggerInstances.forEach(trigger => trigger.kill())
+})
 
 watch(
   [
@@ -153,11 +156,11 @@ watch(
     () => props.baseOpacity,
     () => props.rotationEnd,
     () => props.wordAnimationEnd,
-    () => props.blurStrength,
+    () => props.blurStrength
   ],
   () => {
-    initializeAnimation();
+    initializeAnimation()
   },
-  { deep: true },
-);
+  { deep: true }
+)
 </script>
