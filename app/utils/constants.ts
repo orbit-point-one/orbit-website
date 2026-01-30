@@ -196,7 +196,7 @@ export const DOMICILES = [
   { label: 'Jakarta', value: 1 },
   { label: 'Bogor', value: 2 },
   { label: 'Depok', value: 3 },
-  { label: 'Tanggerang', value: 4 },
+  { label: 'Tangerang', value: 4 },
   { label: 'Bekasi', value: 5 },
   { label: 'Lainnya', value: -1 }
 ]
@@ -234,8 +234,8 @@ export const BUSINESS_CATEGORIES = [
 export const BUSINESS_OMZETS = [
   { label: 'Belum ada omzet', value: 0 },
   { label: '< Rp 1 juta', value: 1 },
-  { label: 'Rp 1-5 juta', value: 2 },
-  { label: 'Rp 5-10 juta', value: 3 },
+  { label: 'Rp 1 - 5 juta', value: 2 },
+  { label: 'Rp 5 - 10 juta', value: 3 },
   { label: '> Rp 10 juta ', value: 4 }
 ]
 
@@ -257,7 +257,7 @@ export const PURPOSE = [
   { label: 'Mencari arah dan mindset CEO', value: 0 },
   { label: 'Validasi ide bisnis', value: 1 },
   { label: 'Membuat bisnis yang sustain', value: 2 },
-  { label: 'Naik level dari UMKM ke bisnis serius', value: 3 },
+  { label: 'Naik level dari UMKM', value: 3 },
   { label: 'Siap pitching ke investor', value: 4 },
   { label: 'Membangun standar baru dalam bisnis', value: 5 }
 ]
