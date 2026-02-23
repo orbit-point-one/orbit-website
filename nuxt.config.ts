@@ -56,7 +56,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { redirect: '/about' }
   },
 
   compatibilityDate: '2025-01-15',

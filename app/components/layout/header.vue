@@ -47,10 +47,10 @@ const items: NavigationMenuItem[] = [
     <template #right>
       <div class="max-lg:hidden flex items-center gap-3">
         <UColorModeButton />
-        <UNavigationMenu
+        <!-- <UNavigationMenu
           :items
           :ui="{ list: 'gap-3' }"
-        />
+        /> -->
         <HomeRegisterForm
           v-if="route.path === '/'"
           button-type="header"
